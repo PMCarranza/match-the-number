@@ -9,61 +9,29 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Crystal Collector</h1>
-                <p class="lead">Are you ready for some mathy fun??!!</p>
-            </div>
-        </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Crystal Collector</h1>
+        <p class="lead">Are you ready for some mathy fun??!!</p>
+      </div>
+    </div>
 
-              <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-<div class="row">
-        <div class="col-12 col-md-8">
-            <p>The game starts with a random number generated for you entertainment.</p>
-            <p>Random values have been assigned to each of the 4 gems you see below, these values are different every time the game restarts</p>
-            <p>You win the game by matching the the total of the number displayed with the values of the gems, you lose if you go over the number</p>
-            <p> Pay attention to your clicks because they will give you the value of each gem</p>
-        </div>
-        <!-- <div class="col-6 col-md-4">.col-6 .col-md-4</div> -->
-        </div>
+    <div id="instructions">
+      <p>The game starts with a random number generated for you entertainment.</p>
+      <p>Random values have been assigned to each of the 4 gems you see below, these values are different every time the game restarts</p>
+      <p>You win the game by matching the the total of the number displayed with the values of the gems, you lose if you go over the number</p>
+      <p> Pay attention to your clicks because they will give you the value of each gem</p>
+    </div>    
 
-        <div class="row">
-          <div class="col"><img src="assets/images/diamond.png"width ="80%"></div>
-          <div class="col"><img src="assets/images/emerald.png"width ="80%"></div>
-          <div class="col"><img src="assets/images/jeperdesJinGem.png"width ="80%"></div>
-          <div class="col"><img src="assets/images/ruby.png"width ="80%"></div>
-        </div>
-        <!-- <div class="row">
-          <div class="col-8">col-8</div>
-          <div class="col-4">col-4</div>
-        </div> -->
-      
-        <div class="container">
-          <div class="row justify-content-md-center">
-            <div class="col col-lg-2">
-              # to Guess
-            </div>
-            <div class="col-md-auto">
-              Variable width content
-            </div>
-            <div class="col col-lg-2">
-              Your guesses add up to
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              # of Wins 
-            </div>
-            <div class="col-md-auto">
-              Variable width content
-            </div>
-            <div class="col col-lg-2">
-              # of Losses
-            </div>
-          </div>
-        </div>
+    <div id="gems"></div>
+
+    <div id="main"></div>
+
+    <div id="wins-losses"></div>
         
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -73,6 +41,7 @@
     <script src="assets/javascript/game.js"></script>
 
     <footer>
+      
       <div id="foot">
         <p>&copy; Mariño Carranza</p>
       </div>
