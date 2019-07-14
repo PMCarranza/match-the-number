@@ -19,127 +19,79 @@
 
 var targetNumber;
 
-var diamondNumber;
+// var diamondNumber;
 
-var emeraldNumber;
+// var emeraldNumber;
 
-var jeperdesJinGemNumber;
+// var jeperdesJinGemNumber;
 
-var rubyNumber;
+// var rubyNumber;
 
-var addGuesses;
+var addGuesses=0;
 
-var wins;
+var wins=0;
 
-var losses;
+var losses=0;
 
 
 // generate random number to be guessed between 19 - 120
 
 function getTargetNumber (min, max) {
-    targetNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+targetNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 
-    $('#main').append(targetNumber);
+$('#to-guess').append(targetNumber);
 
 }
 getTargetNumber();
-console.log(targetNumber);
+// console.log(targetNumber);
 
-// populating images 1 by 1
+// generating random numbers and assigning them to the images
 
-// Diamond
-var imageOne = $('<img>');
-imageOne.addClass('image');
-
-imageOne.attr('src', 'assets/images/diamond.png');
-
-$('#gems').append(imageOne);
-
-// generating randon number for diamnod
-diamondNumber = Math.round(Math.random() * 11)+1;
-
-console.log('this is the # for the diamond ' + diamondNumber);
-
-// Emerald
-
-var imageTwo = $('<img>');
-imageTwo.addClass('image');
-
-imageTwo.attr('src', 'assets/images/emerald.png');
-
-$('#gems').append(imageTwo);
-
-// generating randon number for emerald
-emeraldNumber = Math.round(Math.random() * 11)+1;
-
-console.log('this is the # for the emerald ' + emeraldNumber);
-
-// JeperdesJinGem
-
-var imageThree = $('<img>');
-imageThree.addClass('image');
-
-imageThree.attr('src', 'assets/images/jeperdesJinGem.png');
-
-$('#gems').append(imageThree);
-
-// generating randon number for jeperdesJinGem
-jeperdesJinGemNumber = Math.round(Math.random() * 11)+1;
-
-console.log('this is the # for the jeperdesJinGem ' + jeperdesJinGemNumber);
-
-// ruby
-
-var imageFour = $('<img>');
-imageFour.addClass('image');
-
-imageFour.attr('src', 'assets/images/ruby.png');
-
-$('#gems').append(imageFour);
-
-// generating randon number for ruby
-rubyNumber = Math.round(Math.random() * 11)+1;
-
-console.log('this is the # for the ruby ' + rubyNumber);
+for (var i = 0; i < 4; i++){
+    gemNumber = Math.round(Math.random() * 11) + 1; 
+    // console.log('value of clicked gem is ' + gemNumber);
 
 
+    var gem = $('<img>');
+    gem.addClass('image');
+    gem.attr('src', 'assets/images/precious'+[i]+ '.png');
+    gem.attr('user-guess', gemNumber);
+    $('#gems').append(gem);
 
+}
 
+// getting the value from the images on click and passing it to the guess div
 
+$('.image').on('click', function () {
+    var gemValueNumber = ($(this).attr('user-guess'));
 
+    // converting the value to an integer
+    gemValueNumber = parseInt(gemValueNumber);
 
-// to start populating the gems with for loop
+    // passing numeric value to variable
 
-// for (var i = 0; i < 4; i++){
-//     var image = $('<img>);
-//     image.addClass('image');
-
-//     image.attr('src', 'assets/images')
-
-//     image.attr('precious', jewelsNumber[i]);
-
-//     $('#gems').append(image);
-// }
-
-
-
-
-
-// append number to container
-
-
-
-// generate random numbers for the gems between 1 and 12
-
-
-
-// append the values of the gems to the container when clicked and add the values
-
-
+    addGuesses += gemValueNumber;
+    // console.log('var addGuesses is a ' + typeof);
+    // console.log('the total value of the clicks is ' + addGuesses)
+    console.log('the sum of clicks is == ' + addGuesses);
 
 // compare the value of the gem(s) clicked to the number to be guessed
+    $('#user-guess').append(addGuesses);
+
+// counter for wins and losses and increasing the one that matches
+    if (addGuesses === targetNumber) {
+        wins++;
+        console.log('wins = ' + wins);
+    } else if (addGuesses > targetNumber) {
+        losses++;
+        console.log('losses = ' + losses);
+
+    }
+
+});
 
 
-// counter for wins and losses
+
+
 
 // restart game with a new random number

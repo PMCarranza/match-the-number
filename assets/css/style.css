@@ -12,6 +12,39 @@
 
 .image{
     border: 2px solid blue;
-    width: 15%;
-    height: 15%;
+    width: 20%;
+    height: 20%;
 }
+
+.main{
+    display: flex;
+    justify-content:space-around;
+    border: 2px solid red;
+    align-items: center;
+}
+
+#user-guess{
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 8em;
+    color: dodgerblue;
+}
+
+#text-one{
+    display: flex;
+    justify-content:space-around;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: gray;
+}
+
+#to-guess{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 8em;
+    color: red;
+};
+
+.win{
+    background-color: pink;
+}
+
