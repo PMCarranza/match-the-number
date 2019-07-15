@@ -97,6 +97,7 @@ $(document).on('click', '.image', function () {
         console.log('wins = ' + wins);
         $('#gems').empty();
         $('#to-guess').empty();
+        $('.wins').empty();
         $('.wins').append('Your wins are ' + wins);
         create();
     } else if (addGuesses > targetNumber) {
@@ -105,6 +106,7 @@ $(document).on('click', '.image', function () {
         console.log('losses = ' + losses);
         $('#gems').empty();
         $('#to-guess').empty();
+        $('.defeat').empty();
         $('.defeat').append('Your losses are ' + losses);
         create();
     }
