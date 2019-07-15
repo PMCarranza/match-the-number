@@ -33,36 +33,47 @@ var wins=0;
 
 var losses=0;
 
+// start \ reset function
 
-// generate random number to be guessed between 19 - 120
+var create = function () {
 
-function getTargetNumber (min, max) {
-targetNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+    // generate random number to be guessed between 19 - 120
 
-$('#to-guess').append(targetNumber);
+    function getTargetNumber(min, max) {
+        targetNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 
+        $('#to-guess').append(targetNumber);
+
+    }
+    getTargetNumber();
+    // console.log(targetNumber);
+
+    // generating random numbers and assigning them to the images
+
+    for (var i = 0; i < 4; i++) {
+
+        addGuesses = 0;
+
+        $('#user-guess').empty();
+
+        gemNumber = Math.round(Math.random() * 11) + 1;
+        // console.log('value of clicked gem is ' + gemNumber);
+
+
+        var gem = $('<img>');
+        gem.addClass('image');
+        gem.attr('src', 'assets/images/precious' + [i] + '.png');
+        gem.attr('user-guess', gemNumber);
+        $('#gems').append(gem);
+    }
 }
-getTargetNumber();
-// console.log(targetNumber);
-
-// generating random numbers and assigning them to the images
-
-for (var i = 0; i < 4; i++){
-    gemNumber = Math.round(Math.random() * 11) + 1; 
-    // console.log('value of clicked gem is ' + gemNumber);
-
-
-    var gem = $('<img>');
-    gem.addClass('image');
-    gem.attr('src', 'assets/images/precious'+[i]+ '.png');
-    gem.attr('user-guess', gemNumber);
-    $('#gems').append(gem);
-
-}
+create();
 
 // getting the value from the images on click and passing it to the guess div
 
-$('.image').on('click', function () {
+$(document).on('click', '.image', function () {
+     $('#user-guess').empty();
+
     var gemValueNumber = ($(this).attr('user-guess'));
 
     // converting the value to an integer
@@ -81,14 +92,49 @@ $('.image').on('click', function () {
 // counter for wins and losses and increasing the one that matches
     if (addGuesses === targetNumber) {
         wins++;
+        $('#user-guess').css({ 'color': 'blue' });
+
         console.log('wins = ' + wins);
+        $('#gems').empty();
+        $('#to-guess').empty();
+        $('.wins').append('Your wins are ' + wins);
+        create();
     } else if (addGuesses > targetNumber) {
         losses++;
+        $('#user-guess').css({ 'color': 'red' });
         console.log('losses = ' + losses);
-
+        $('#gems').empty();
+        $('#to-guess').empty();
+        $('.defeat').append('Your losses are ' + losses);
+        create();
     }
 
+
+    // ***********THESE DO NOT ADD A NEW
+
+    // displaying wis and losses
+    // var victory = $('<div>');
+    // victory.addClass('wins');
+    // victory.attr('wins', wins);
+    // $('#wins-losses').append(wins);
+
+
+
+    // var defeats = $('<div>');
+    // defeats.addClass('defeats');
+    // defeats.attr('defeats', losses);
+    // $('#wins-losses').append(losses);
+
+
 });
+
+// ************THIS DID NOT WORK FOR ADDING DIV
+
+// var victory = $('<div>');
+// victory.addClass('wins');
+// // victory.attr('wins', wins);
+// $('#wins-losses').append('<div>');
+
 
 
 

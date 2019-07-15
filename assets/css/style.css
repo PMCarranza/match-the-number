@@ -1,7 +1,7 @@
-*{
+/* *{
     margin:0;
     padding:0;
-}
+} */
 
 #gems{
     display: flex;
@@ -23,12 +23,6 @@
     align-items: center;
 }
 
-#user-guess{
-    font-family: Impact, 'Arial Narrow Bold', sans-serif;
-    font-size: 8em;
-    color: dodgerblue;
-}
-
 #text-one{
     display: flex;
     justify-content:space-around;
@@ -41,10 +35,37 @@
 #to-guess{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 8em;
-    color: red;
-};
+    color: blue;
+}
 
-.win{
-    background-color: pink;
+#user-guess{
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 8em;
+    color: greenyellow;
+}
+
+#wins-losses{
+    display: flex;
+    justify-content:space-around;
+}
+
+.wins{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    color:blue;
+}
+
+.defeat{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    color:red;
+}
+
+#foot{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: .5em;
+    color: gray;
+    text-align: center;
 }
 
