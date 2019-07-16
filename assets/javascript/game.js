@@ -37,6 +37,7 @@ var losses=0;
 
 var create = function () {
 
+    
     // generate random number to be guessed between 19 - 120
 
     function getTargetNumber(min, max) {
@@ -54,7 +55,7 @@ var create = function () {
 
         addGuesses = 0;
 
-        $('#user-guess').empty();
+        // $('#user-guess').empty();
 
         gemNumber = Math.round(Math.random() * 11) + 1;
         // console.log('value of clicked gem is ' + gemNumber);
@@ -72,8 +73,8 @@ create();
 // getting the value from the images on click and passing it to the guess div
 
 $(document).on('click', '.image', function () {
-     $('#user-guess').empty();
-
+    $('#user-guess').empty();
+    $('#user-guess').css({ 'color': 'greenyellow' });
     var gemValueNumber = ($(this).attr('user-guess'));
 
     // converting the value to an integer
@@ -94,7 +95,7 @@ $(document).on('click', '.image', function () {
         wins++;
         $('#user-guess').css({ 'color': 'blue' });
 
-        console.log('wins = ' + wins);
+        // console.log('wins = ' + wins);
         $('#gems').empty();
         $('#to-guess').empty();
         $('.wins').empty();
@@ -103,7 +104,7 @@ $(document).on('click', '.image', function () {
     } else if (addGuesses > targetNumber) {
         losses++;
         $('#user-guess').css({ 'color': 'red' });
-        console.log('losses = ' + losses);
+        // console.log('losses = ' + losses);
         $('#gems').empty();
         $('#to-guess').empty();
         $('.defeat').empty();
@@ -112,13 +113,14 @@ $(document).on('click', '.image', function () {
     }
 
 
-    // ***********THESE DO NOT ADD A NEW
+    // ***********THESE DO NOT ADD A NEW container
 
-    // displaying wis and losses
+    // displaying wins and losses
+
     // var victory = $('<div>');
-    // victory.addClass('wins');
-    // victory.attr('wins', wins);
-    // $('#wins-losses').append(wins);
+    // victory.addClass('numberwins');
+    // victory.attr('<div>', wins);
+    // $('.wins').append(wins);
 
 
 
@@ -135,7 +137,7 @@ $(document).on('click', '.image', function () {
 // var victory = $('<div>');
 // victory.addClass('wins');
 // // victory.attr('wins', wins);
-// $('#wins-losses').append('<div>');
+// $('.wins').append('XXXX', wins);
 
 
 
