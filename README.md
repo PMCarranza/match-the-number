@@ -26,6 +26,19 @@ Every time the game begins, the player will see a new random number. Also, all t
 
 <img src="assets/images/clicky.gif">
 
+## **Technologies**
+•  HTML
+
+•  Javascript
+
+•  JQuery
+
+•  Bootstrap
+
+•  CSS
+
+•  GitHub
+
 ## **Support**
 Please share your questions about this game with me at marino.carranza@gmail.com and I will do my best to answer them.
 
