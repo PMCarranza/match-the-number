@@ -14,24 +14,17 @@
 // ***** VARIABLES NEEDED  ********
 
 // random number to be guessed
-// random values for each gem
 // counter for adding each guess
 
 var targetNumber;
-
-// var diamondNumber;
-
-// var emeraldNumber;
-
-// var jeperdesJinGemNumber;
-
-// var rubyNumber;
 
 var addGuesses=0;
 
 var wins=0;
 
-var losses=0;
+var losses = 0;
+
+var intervalId;
 
 // start \ reset function
 
@@ -49,7 +42,7 @@ var create = function () {
     getTargetNumber();
     // console.log(targetNumber);
 
-    // generating random numbers and assigning them to the images
+    // generating random numbers and assigning them to the images using a for loop
 
     for (var i = 0; i < 4; i++) {
 
@@ -59,7 +52,6 @@ var create = function () {
 
         gemNumber = Math.round(Math.random() * 11) + 1;
         // console.log('value of clicked gem is ' + gemNumber);
-
 
         var gem = $('<img>');
         gem.addClass('image');
@@ -74,7 +66,7 @@ create();
 
 $(document).on('click', '.image', function () {
     $('#user-guess').empty();
-    $('#user-guess').css({ 'color': 'greenyellow' });
+    $('#user-guess').css({ 'color': 'green' });
     var gemValueNumber = ($(this).attr('user-guess'));
 
     // converting the value to an integer
@@ -99,8 +91,8 @@ $(document).on('click', '.image', function () {
         $('#gems').empty();
         $('#to-guess').empty();
         $('.wins').empty();
-        $('.wins').append('Your wins are ' + wins);
-        create();
+        $('.wins').append('You got this!');
+        reStart();
     } else if (addGuesses > targetNumber) {
         losses++;
         $('#user-guess').css({ 'color': 'red' });
@@ -108,40 +100,22 @@ $(document).on('click', '.image', function () {
         $('#gems').empty();
         $('#to-guess').empty();
         $('.defeat').empty();
-        $('.defeat').append('Your losses are ' + losses);
-        create();
+        $('.defeat').append('Bummer ={   ' + '  this one goes to the House');
+        reStart();
     }
-
-
-    // ***********THESE DO NOT ADD A NEW container
-
-    // displaying wins and losses
-
-    // var victory = $('<div>');
-    // victory.addClass('numberwins');
-    // victory.attr('<div>', wins);
-    // $('.wins').append(wins);
-
-
-
-    // var defeats = $('<div>');
-    // defeats.addClass('defeats');
-    // defeats.attr('defeats', losses);
-    // $('#wins-losses').append(losses);
-
-
 });
 
-// ************THIS DID NOT WORK FOR ADDING DIV
+// countdown to restart the game
 
-// var victory = $('<div>');
-// victory.addClass('wins');
-// // victory.attr('wins', wins);
-// $('.wins').append('XXXX', wins);
+function run() {
+    clearInterval(intervalId);
+    seconds = 4;
+    intervalId = setInterval(countDown, 1000);
+};
 
-
-
-
-
-
-// restart game with a new random number
+function reStart() {
+    clearInterval(intervalId);
+    setTimeout(function(){
+        location.reload();
+    }, 4000);
+};

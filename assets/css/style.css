@@ -8,37 +8,43 @@ body{
     margin: auto;
     overflow: auto;
 }
+div.jumbotron.jumbotron-fluid{
+        background-image: linear-gradient(rgb(0, 204, 255), rgb(148, 236, 148));
+}
 
 .display-4{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 5em;
-    color:black;
+    font-size: 6vw;
+    color: rgb(160, 156, 156);
     display: flex;
     justify-content: center;
     align-items: center;
+    text-shadow: .75vw .75vw .75vw black;
 }
 
 .lead{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 2em;
-    color:blue;
+    font-size: 3vw;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-shadow: 1.5vw 1.5vw 1.5vw rgb(28, 165, 108);
 }
 
 #instructions{
-    font-size: 20px;
+    color: rgb(66, 75, 85);
+    font-size: 2vw;
     font-weight: bold;
-    margin-left: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 3%;
 }
 
 #gems{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3%;
 }
 
 .image{
@@ -57,20 +63,20 @@ body{
     justify-content:space-around;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 2em;
-    color: gray;
+    font-size: 2vw;
+    color: rgb(66, 75, 85);
 }
 
 #to-guess{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 8em;
+    font-size: 8vw;
     color: blue;
 }
 
 #user-guess{
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
-    font-size: 8em;
-    color: greenyellow;
+    font-size: 8vw;
+    color: green;
 }
 
 #wins-losses{
@@ -80,27 +86,26 @@ body{
 
 .wins{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 2em;
+    font-size: 2vw;
     color:blue;
 }
 
 .defeat{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 2em;
+    font-size: 2vw;
     color:red;
 }
 
 #foot{
-    background-color: lightgray;
-    margin-top: 20px;
-    height: 40px;
-    color: black;
+    background-color:slategray;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: .5em;
+    font-size: 1vw;
     text-align: center;
-    margin:auto;
-    padding: 15px;
+    margin: auto;
+    padding: 1%;
+    margin-bottom: 1%;
 }
 
 @media only screen and (max-width: 680px) {
