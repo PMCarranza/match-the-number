@@ -1,10 +1,10 @@
-# **Guess the Number!**
+# **Match the Number!**
 
 ## **Description**
-The purpose of this game is to guess the randomly generated number.
+The purpose of this game is to match the randomly generated number.
 
 ## **Functionality**
-The number to be guessed is displayed in blue on the bottom left side of the screen.
+The number to be matched is displayed in blue on the bottom left side of the screen.
 This is a randomly generated number between 19 and 120.
 
 Each of the gems displayed in the center has a randomly generated number between 1 and 12 assigned to them.
