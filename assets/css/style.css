@@ -3,6 +3,9 @@
     padding:0;
 }
 
+html, body{
+    min-height: 100vh;
+}
 body{
     width: 90%;
     margin: auto;
@@ -82,6 +85,7 @@ body{
 #wins-losses{
     display: flex;
     justify-content:space-around;
+    margin-bottom: 20%;
 }
 
 .wins{
