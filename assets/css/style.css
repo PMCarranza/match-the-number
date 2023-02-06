@@ -3,16 +3,23 @@
     padding:0;
 }
 
-html, body{
-    min-height: 100vh;
-}
 body{
-    width: 90%;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100vh;
     margin: auto;
-    overflow: auto;
+    font-family: Arial, Helvetica, sans-serif;
     background: rgb(169,235,236);
     background: linear-gradient(0deg, rgba(169,235,236,0.6349133403361344) 55%, rgba(36,129,149,1) 100%);
 }
+
+.content{
+    margin: 0 auto;
+    max-width: 90%;
+    min-height: 100%;
+}
+
 
 .display-4{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -26,7 +33,6 @@ body{
 }
 
 .lead{
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 3vw;
     color: black;
@@ -64,7 +70,6 @@ body{
 #text-one{
     display: flex;
     justify-content:space-around;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 2vw;
     color: rgb(66, 75, 85);
@@ -100,16 +105,17 @@ body{
     color:red;
 }
 
-#foot{
+.foot{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
     background-color:slategray;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1vw;
     text-align: center;
-    margin: auto;
-    padding: 1%;
-    margin-bottom: 1%;
 }
 
 @media only screen and (max-width: 680px) {
