@@ -105,6 +105,15 @@ body{
     color:red;
 }
 
+a{
+    color: rgb(49, 44, 44);
+}
+
+a:hover{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
 .foot{
     position: absolute;
     right: 0;
@@ -114,7 +123,7 @@ body{
     background-color:slategray;
     color: white;
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 1.5vw;
     text-align: center;
 }
 
